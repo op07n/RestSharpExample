@@ -13,7 +13,7 @@ namespace RestSharpExample
     {
         private static async Task<T> ExecuteGet<T>(string resource)
         {
-            var request = new Request(resource, Method.GET);
+            var request = new HLHttpRequest(resource, Method.GET);
             var response = await SingletonTypicodeClient.Instance.ExecuteTaskAsync<T>(request);
             return response.Data;
         }
@@ -43,7 +43,7 @@ namespace RestSharpExample
         {
         }
 
-        public static Client Instance { get; } = new Client("https://jsonplaceholder.typicode.com");
+        public static HLHttpClient.HLHttpClient Instance { get; } = new HLHttpClient.HLHttpClient("https://jsonplaceholder.typicode.com");
     }
 
     // CLASES EXTRAIDAS CON http://json2csharp.com/

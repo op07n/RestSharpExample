@@ -4,19 +4,19 @@ using RestSharp;
 
 namespace RestSharpExample.HLHttpClient
 {
-    public class Client : RestClient
+    public class HLHttpClient : RestClient
     {
-        public Client()
+        public HLHttpClient()
         {
         }
 
-        public Client(Uri baseUrl)
+        public HLHttpClient(Uri baseUrl)
             : this()
         {
             BaseUrl = baseUrl;
         }
 
-        public Client(string baseUrl)
+        public HLHttpClient(string baseUrl)
             : this()
         {
             if (string.IsNullOrEmpty(baseUrl))
